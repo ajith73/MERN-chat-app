@@ -4,26 +4,26 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-    "start": "nodemon backend/server.js",
-     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+        "start": "nodemon backend/server.js",
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
     },
     "keywords": [
-    "mern",
-    "chat-app"
+        "mern",
+        "chat-app"
     ],
     "author": "Piyush Agarwal",
     "license": "ISC",
     "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "colors": "^1.4.0",
-    "dotenv": "^9.0.2",
-    "express": "^4.17.3",
-    "express-async-handler": "^1.1.4",
-    "iconv-lite": "^0.6.3",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.13.14",
-    "nodemon": "^2.0.7",
-  "raw-body": "^2.5.0",
-    "socket.io": "^4.1.2"
-  }
+        "bcryptjs": "^2.4.3",
+        "colors": "^1.4.0",
+        "dotenv": "^9.0.2",
+        "express": "^4.17.3",
+        "express-async-handler": "^1.2.0",
+        "iconv-lite": "^0.6.3",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.13.14",
+        "nodemon": "^2.0.7",
+        "raw-body": "^2.5.0",
+        "socket.io": "^4.1.2"
+    }
 }
