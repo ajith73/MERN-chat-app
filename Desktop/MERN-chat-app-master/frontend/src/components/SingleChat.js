@@ -15,7 +15,7 @@ import animationData from "../animations/typing.json";
 import io from "socket.io-client";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../Context/ChatProvider";
-const ENDPOINT = "https://chatappmini.herokuapp.com/"; // "https://talk-a-tive.herokuapp.com"; "http://localhost:5000" -> After deployment
+const ENDPOINT = "https://chatappmini.herokuapp.com/"; // "https://talk-a-tive.herokuapp.com"; https://chatappmini.herokuapp.com/ "http://localhost:5000" -> After deployment
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
