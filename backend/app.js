@@ -28,7 +28,7 @@ import messageRoute from "./api/routes/message.js";
 const start = async () => {
   try {
     // console.log(process.env.MONGO_URL)
-    await connectDB(process.env.MONGO_URL, {
+    await connectDB(`mongodb+srv://ajith73:7395858781@cluster0.gukoo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       // useFindAndModify: true,
