@@ -54,7 +54,7 @@ const start = async () => {
     const io = new Server(server, {
       pingTimeout: 60000,
       cors: {
-        origin: "https://chatappmini.vercel.app",
+        origin: "*",
       },
     });
 
