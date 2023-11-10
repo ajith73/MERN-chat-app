@@ -31,6 +31,21 @@ import authRoute from "./routes/auth.js";
 import chatRoute from "./routes/chat.js";
 import messageRoute from "./routes/message.js";
 
+const port = process.env.PORT || 5000;
+const server = createServer(app);
+
+const start = async () => {
+  try {
+    await connectDB(process.env.MONGO_URL);
+    server.listen(port, () =>
+      console.log(`Server Running on port : ${port}...`)
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+start();
 const app = express();
 
 if (process.env.NODE_ENV !== "production") {
@@ -54,21 +69,7 @@ app.use("/api/v1/message", authenticateUser, messageRoute);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
-const port = process.env.PORT || 5000;
-const server = createServer(app);
 
-const start = async () => {
-  try {
-    await connectDB(process.env.MONGO_URL);
-    server.listen(port, () =>
-      console.log(`Server Running on port : ${port}...`)
-    );
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-start();
 
 const io = new Server(server, {
   pingTimeout: 60000,
