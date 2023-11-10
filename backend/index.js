@@ -20,6 +20,7 @@ import { Server } from "socket.io";
 import connectDB from "./db/connect.js";
 
 import cors from "cors";
+const path = require("path");
 
 //middleware
 import notFoundMiddleware from "./middleware/not-found.js";
@@ -43,6 +44,7 @@ app.use(helmet());
 app.use(xss());
 app.use(mongoSanitize());
 
+
 app.get("/", (req, res) => {
   res.send("Server Running!");
 });
@@ -53,6 +55,8 @@ app.use("/api/v1/message", authenticateUser, messageRoute);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
+
+const __dirname1 = path.resolve();
 
 const port = process.env.PORT || 5000;
 const server = createServer(app);
