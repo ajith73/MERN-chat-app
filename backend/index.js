@@ -45,7 +45,7 @@ const server = createServer(app);
 
 const start = async () => {
   try {
-    await connectDB(`mongodb+srv://ajith73:7395858781@cluster0.gukoo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`);//process.env.MONGO_URL
+    await connectDB(process.env.MONGO_URL);//process.env.MONGO_URL
     server.listen(port, () =>
       console.log(`Server Running on port : ${port}...`)
     );
@@ -53,7 +53,7 @@ const start = async () => {
     const io = new Server(server, {
       pingTimeout: 60000,
       cors: {
-        origin: "https://chatappmini.vercel.app/",
+        origin: "https://chatappmini.vercel.app",
       },
     });
 
