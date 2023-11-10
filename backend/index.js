@@ -45,7 +45,8 @@ const server = createServer(app);
 
 const start = async () => {
   try {
-    await connectDB(process.env.MONGO_URL);//process.env.MONGO_URL
+  const uri = process.env.MONGO_URL || `mongodb+srv://ajith73:7395858781@cluster0.gukoo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+    await connectDB(uri);//process.env.MONGO_URL
     server.listen(port, () =>
       console.log(`Server Running on port : ${port}...`)
     );
