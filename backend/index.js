@@ -30,6 +30,7 @@ import authenticateUser from "./middleware/auth.js";
 import authRoute from "./routes/auth.js";
 import chatRoute from "./routes/chat.js";
 import messageRoute from "./routes/message.js";
+const app = express();
 
 const port = process.env.PORT || 5000;
 const server = createServer(app);
@@ -46,7 +47,7 @@ const start = async () => {
 };
 
 start();
-const app = express();
+
 
 if (process.env.NODE_ENV !== "production") {
   app.use(morgan("dev"));
