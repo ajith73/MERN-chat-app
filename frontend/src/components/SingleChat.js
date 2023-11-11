@@ -19,7 +19,7 @@ import UpdateGroupChatModel from "./UpdateGroupChatModel";
 import io from "socket.io-client";
 
 let socket, selectedChatCompare;
-const ENDPOINT = "https://mern-chat-app-virid.vercel.app/";
+const ENDPOINT = "https://mern-chat-app-server-41es.onrender.com/";
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   const { selectedChat, setSelectedChat, user, notification, setNotification } =
