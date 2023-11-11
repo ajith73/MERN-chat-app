@@ -2,7 +2,7 @@ import axios from "axios";
 import { getUserFromLocalStorage } from "./localStorage";
 
 const api = axios.create({
-  baseURL: `https://mern-chat-app-virid.vercel.app//`,//process.env.REACT_APP_API
+  baseURL: `https://mern-chat-app-server-41es.onrender.com/`,//process.env.REACT_APP_API
 });
 
 api.interceptors.request.use((config) => {
