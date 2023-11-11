@@ -54,10 +54,8 @@ const start = async () => {
     const io = new Server(server, {
       pingTimeout: 60000,
       cors: {
-    origin: "*",
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-      },
+    origin: "\*",
+      }
     });
 
     io.on("connection", (socket) => {
