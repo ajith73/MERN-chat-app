@@ -67,7 +67,11 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   };
 
   useEffect(() => {
-    socket = io(ENDPOINT,{transports: ['websocket', 'polling'],});
+    socket = io(ENDPOINT,{
+      path: '/socket.io',
+transports: ['websocket'],
+secure: true,
+    });
     socket.emit("setup", user);
     
     socket.on("connected", () => setSocketConnected(true));
